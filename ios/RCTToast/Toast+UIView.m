@@ -114,10 +114,9 @@ static UIView *prevToast = NULL;
         toast.exclusiveTouch = YES;
     }
 
-    // make sure that if InAppBrowser is active, we're still showing Toasts on top of it
-    UIViewController *vc = [self getTopMostViewController];
-    UIView *v = [vc view];
-    [v addSubview:toast];
+    // make sure Toasts will be displayed above keyboard window.
+    UIWindow *window = [UIApplication sharedApplication].windows.lastObject;
+    [window addSubview:toast];
 
     [UIView animateWithDuration:CSToastFadeDuration
                           delay:0.0
