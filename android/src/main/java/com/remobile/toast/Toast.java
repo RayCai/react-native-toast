@@ -41,9 +41,9 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
                         "short".equals(duration) ? android.widget.Toast.LENGTH_SHORT : android.widget.Toast.LENGTH_LONG);
 
                 if ("top".equals(position)) {
-                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 20 + addPixelsY);
+                    toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, addPixelsY);
                 } else if ("bottom".equals(position)) {
-                    toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 20 - addPixelsY);
+                    toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0 - addPixelsY);
                 } else if ("center".equals(position)) {
                     toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, addPixelsY);
                 } else {
